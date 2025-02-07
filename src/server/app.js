@@ -10,7 +10,7 @@ app.use(cors({
   origin: "http://127.0.0.1:5173",  // Allow only requests from this origin (React frontend)
   methods: "GET,POST,PUT,DELETE",   // Allow these methods
   allowedHeaders: "Content-Type,Authorization"  // Allow these headers
-}));
+});
 
 // Middleware for parsing JSON request bodies
 app.use(express.json());
