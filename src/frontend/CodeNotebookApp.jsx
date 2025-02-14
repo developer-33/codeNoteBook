@@ -100,7 +100,7 @@ const CodeNotebookApp = () => {
   // };
 
   return (
-    <div className="p-6 bg-gray-100 min-h-screen">
+    <div className="p-6  bg-gray-400 dark:bg-gray-700 text-red-700 dark:text-red-700- min-h-screen">
       <h1 className="text-3xl font-bold mb-6">Code Notebook App</h1>
 
       {/* Add Notebook Section */}
@@ -118,7 +118,7 @@ const CodeNotebookApp = () => {
       </div>
 
       {/* Select Notebook Section */}
-      <div className="mb-6">
+      <div className="mb-6  bg-gray-400 dark:bg-gray-700 text-red-700 dark:text-yellow-400">
         <h2 className="text-xl font-bold mb-2">Select Notebook</h2>
         <div className="flex flex-wrap gap-2">
           {notebooks.map((notebook) => (
