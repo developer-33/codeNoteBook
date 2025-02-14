@@ -3,7 +3,7 @@ import { useState } from "react";
 const MediaGallery = () => {
   // Sample media data (replace with database fetch)
   const [media, setMedia] = useState([
-    { type: "image", src: "./assets/106.webp", title: "Livery Design #1" },
+    { type: "image", src: "../../assets/car2.jpg", title: "Livery Design #1" },
     { type: "image", src: "/livery2.jpg", title: "Custom Supra Wrap" },
     { type: "video", src: "/drift-clip.mp4", title: "Epic Drift Run" },
   ]);

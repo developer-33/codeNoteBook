@@ -2,17 +2,19 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // For smooth animations
 import { FaUserShield, FaComments, FaTrophy } from "react-icons/fa"; // Icons for features
-
+import Wallpaper from "./Wallpaper";
 function Home() {
   return (
-    <div className="relative min-h-screen bg-gray-900 text-white flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen bg-gray-400 text-white flex flex-col items-center justify-center overflow-hidden">
       
       {/* Animated Background */}
-      <div className="absolute inset-0 z-0">
+      {/* <div className="absolute inset-0 z-0">
         <div className="absolute w-full h-full bg-gradient-to-b from-black via-gray-900 to-gray-800 opacity-70"></div>
-        <div className="absolute w-full h-full animate-pulse bg-[radial-gradient(circle_at_top_right,_#00ffff33,_transparent)]"></div>
-      </div>
-
+        <div className="absolute w-full h-full animate-pulse bg-[radial-gradient(circle_at_top_right,_#00ffff33,_transparent)]">
+          {/* <Wallpaper /> */}
+        {/* </div>
+      </div> */} 
+        <Wallpaper />
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -50 }}
@@ -20,20 +22,20 @@ function Home() {
         transition={{ duration: 1 }}
         className="text-center z-10"
       >
-        <h1 className="text-6xl font-extrabold text-cyan-400 neon-text drop-shadow-lg">
-          Welcome to CyberNet
+        <h1 className="text-6xl font-extrabold text-red-700 dark:text-orange-500  neon-text drop-shadow-lg">
+          Welcome to Car X Street Underground
         </h1>
         <p className="text-lg text-gray-300 mt-4 max-w-xl mx-auto">
           Experience the next-gen platform where technology meets community. Customize, compete, and connect like never before.
         </p>
         <div className="mt-6 flex gap-4 justify-center">
           <Link to="/login">
-            <button className="px-6 py-2 text-lg font-semibold rounded-lg bg-cyan-600 hover:bg-cyan-700 transition-all duration-300 shadow-lg glow-btn">
+            <button className="px-6 py-2 text-lg font-semibold rounded-lg bg-red-700 hover:bg-gray-700 transition-all duration-300 shadow-lg glow-btn">
               Get Started
             </button>
           </Link>
           <Link to="/about">
-            <button className="px-6 py-2 text-lg font-semibold rounded-lg border border-cyan-400 text-cyan-400 hover:bg-cyan-500 hover:text-white transition-all duration-300 shadow-lg">
+            <button className="px-6 py-2 text-lg font-semibold rounded-lg border border-black text-black divide-amber-600 hover:text-white transition-all duration-300 shadow-lg">
               Learn More
             </button>
           </Link>
@@ -48,13 +50,13 @@ function Home() {
         className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl z-10"
       >
         <div className="feature-card">
-          <FaUserShield className="text-4xl text-cyan-300 mb-2" />
-          <h3 className="text-xl font-semibold text-cyan-300">🔥 Custom Profiles</h3>
-          <p className="text-gray-400 mt-2">Personalize your space with themes, avatars, and unique status updates.</p>
+          <FaUserShield className="text-4xl text-red-700 mb-2" />
+          <h3 className="text-xl font-semibold text-red-700">🔥 Custom Profiles</h3>
+          <p className="text-red-700 mt-2">Personalize your space with themes, avatars, and unique status updates.</p>
         </div>
 
         <div className="feature-card">
-          <FaComments className="text-4xl text-cyan-300 mb-2" />
+          <FaComments className="text-4xl text-red-700 mb-2" />
           <h3 className="text-xl font-semibold text-cyan-300">🌐 Community Chats</h3>
           <p className="text-gray-400 mt-2">Join topic-based chatrooms and connect in real time.</p>
         </div>

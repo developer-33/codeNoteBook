@@ -226,3 +226,63 @@
   };
 
   export default CodeNotebookApp;
+
+
+
+//   import { useEffect, useState } from "react";
+// // import { fetchNotebooks, addNotebook, deleteNotebook } from "./api";
+
+// const CodeNotebookApp = () => {
+//   const [notebooks, setNotebooks] = useState([]);
+//   const [notebookName, setNotebookName] = useState("");
+
+//   useEffect(() => {
+//     const getNotebooks = async () => {
+//       const data = await fetchNotebooks();
+//       setNotebooks(data);
+//     };
+//     getNotebooks();
+//   }, []);
+
+//   const handleAddNotebook = async () => {
+//     if (!notebookName.trim()) return;
+//     await addNotebook(notebookName);
+//     setNotebookName("");
+//     const updated = await fetchNotebooks();
+//     setNotebooks(updated);
+//   };
+
+//   const handleDeleteNotebook = async (id) => {
+//     await deleteNotebook(id);
+//     const updated = await fetchNotebooks();
+//     setNotebooks(updated);
+//   };
+
+//   return (
+//     <div className="p-6 bg-gray-900 text-white min-h-screen">
+//       <h1 className="text-3xl font-bold mb-6">Code Notebook App</h1>
+//       <input
+//         type="text"
+//         placeholder="New Notebook Name"
+//         value={notebookName}
+//         onChange={(e) => setNotebookName(e.target.value)}
+//         className="p-2 border rounded mr-2 bg-gray-800 text-white"
+//       />
+//       <button onClick={handleAddNotebook} className="bg-blue-500 py-2 px-4 rounded">
+//         Add Notebook
+//       </button>
+//       <div className="mt-4">
+//         {notebooks.map((notebook) => (
+//           <div key={notebook.id} className="flex justify-between p-2 bg-gray-800 rounded mb-2">
+//             <span>{notebook.name}</span>
+//             <button onClick={() => handleDeleteNotebook(notebook.id)} className="text-red-400">
+//               Delete
+//             </button>
+//           </div>
+//         ))}
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default CodeNotebookApp;

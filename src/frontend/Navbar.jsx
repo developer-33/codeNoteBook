@@ -45,11 +45,12 @@ function Navbar() {
         {/* Right Section - Icons & Dark Mode Toggle */}
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className="text-xl hover:text-cyan-400"><FaHome /></Link>
-          <Link to="/friends" className="text-xl hover:text-cyan-400"><FaUserFriends /></Link>
+          <Link to="/friends" className="text-xl hover:text-gray-400"><FaUserFriends /></Link>
           <Link to="/notifications" className="text-xl hover:text-cyan-400"><FaBell /></Link>
+          <Link to="/notebook" className="text-xl hover:text-cyan-400"><FaBell /></Link>
 
           {/* Dark Mode Toggle */}
-          <button onClick={toggleDarkMode} className="text-black dark:text-red-700 flex items-center gap-2">
+          <button onClick={toggleDarkMode} className=" flex items-center gap-2">
             {isDarkMode ? <FiSun /> : <FiMoon />}
           </button>
 
@@ -85,11 +86,12 @@ function Navbar() {
           <Link to="/notifications" className="block py-2">Notifications</Link>
           <Link to="/profile" className="block py-2">Profile</Link>
           <Link to="/settings" className="block py-2">Settings</Link>
+          <Link to="/notebooks" className="block py-2">Settings</Link>
 
           {/* Dark Mode Toggle */}
           <button onClick={toggleDarkMode} className="flex items-center gap-2 py-2">
             {isDarkMode ? <FiSun /> : <FiMoon />}
-            The Darkness
+        
           </button>
         </div>
       )}
