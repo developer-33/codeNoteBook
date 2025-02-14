@@ -11,4 +11,7 @@ export default function useDarkMode() {
   }, [isDarkMode]);
 
   return [isDarkMode, setIsDarkMode];
+
 }
+
+

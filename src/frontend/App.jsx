@@ -52,7 +52,6 @@ import useDarkMode from "./useDarkMode";
 import NavBar from "./Navbar";
 import Sidebar from "./Sidebar";
 import Mainsection from "./Mainsection";
-
 import "./index.css";
 
 function App() {

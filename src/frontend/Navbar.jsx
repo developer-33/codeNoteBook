@@ -1,63 +1,100 @@
-import { useState } from "react";
-import { FiSun, FiMoon, FiMenu, FiX } from "react-icons/fi";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import { FaHome, FaUserFriends, FaBell, FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
+import { FiMoon, FiSun } from "react-icons/fi";
 
-const NavBar = ({ isDarkMode, toggleDarkMode }) => {
-  const [isOpen, setIsOpen] = useState(false);
+function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  // Toggle Dark Mode
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
 
   return (
-    <nav className="bg-gray-400 dark:bg-black shadow-lg">
-      <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <a href="/" className="text-2xl font-bold text-black dark:text-white">
-            MyWebsite
-          </a>
+    <nav className="bg-white text-red-700   dark:text-white  dark:bg-orange-600 fixed top-0 w-full shadow-lg z-50">
+      <div className="container mx-auto flex items-center justify-between px-4 py-2">
+        
+        {/* Left Section - Logo */}
+        <Link to="/" className="text-2xl font-bold  text-red-700   dark:text-white ">
+          Car X Street Underground
+        </Link>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-6">
-            <a href="/" className="text-black dark:text-white hover:text-gray-500">
-              Home
-            </a>
-            <a href="/notebook" className="text-black dark:text-white hover:text-gray-500">
-              Notebook
-            </a>
-            <a href="/profile" className="text-black dark:text-white hover:text-gray-500">
-              Profile
-            </a>
-          </div>
+        {/* Center Section - Search Bar (Hidden on Small Screens) */}
+        <div className="hidden md:flex bg-gray-800 dark:bg-gray-700 rounded-full px-4 py-1 w-1/3">
+          <input
+            type="text"
+            placeholder="Search..."
+            className="bg-transparent focus:outline-none text-white px-2 w-full"
+          />
+        </div>
 
-          {/* Dark Mode Toggle & Mobile Menu Button */}
-          <div className="flex items-center space-x-4">
-            <button onClick={toggleDarkMode} className="text-black dark:text-white text-xl">
-              {isDarkMode ? <FiSun /> : <FiMoon />}
+        {/* Right Section - Icons & Dark Mode Toggle */}
+        <div className="hidden md:flex items-center gap-6">
+          <Link to="/" className="text-xl hover:text-cyan-400"><FaHome /></Link>
+          <Link to="/friends" className="text-xl hover:text-cyan-400"><FaUserFriends /></Link>
+          <Link to="/notifications" className="text-xl hover:text-cyan-400"><FaBell /></Link>
+
+          {/* Dark Mode Toggle */}
+          <button onClick={toggleDarkMode} className="text-black dark:text-red-700 flex items-center gap-2">
+            {isDarkMode ? <FiSun /> : <FiMoon />}
+          </button>
+
+          {/* Profile Dropdown */}
+          <div className="relative">
+            <button onClick={() => setMenuOpen(!menuOpen)} className="text-xl text-black dark:text-white focus:outline-none">
+              <FaUserCircle />
             </button>
 
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden text-black dark:text-white text-xl"
-            >
-              {isOpen ? <FiX /> : <FiMenu />}
-            </button>
+            {menuOpen && (
+              <div className="absolute right-0 mt-2 w-40 bg-gray-800 dark:bg-gray-700 shadow-md rounded-lg">
+                <Link to="/profile" className="block px-4 py-2 hover:bg-gray-700">Profile</Link>
+                <Link to="/settings" className="block px-4 py-2 hover:bg-gray-700">Settings</Link>
+                <button className="block w-full text-left px-4 py-2 hover:bg-gray-700">
+                  Logout
+                </button>
+              </div>
+            )}
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isOpen && (
-          <div className="md:hidden flex flex-col space-y-4 py-4">
-            <a href="/" className="text-black dark:text-white text-center hover:text-gray-500">
-              Home
-            </a>
-            <a href="/notebook" className="text-black dark:text-white text-center hover:text-gray-500">
-              Notebook
-            </a>
-            <a href="#" className="text-black dark:text-white text-center hover:text-gray-500">
-              Contact
-            </a>
-          </div>
-        )}
+        {/* Mobile Menu Button */}
+        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-xl">
+          {menuOpen ? <FaTimes /> : <FaBars />}
+        </button>
       </div>
+
+      {/* Mobile Menu - Hidden on Desktop */}
+      {menuOpen && (
+        <div className="md:hidden bg-gray-900 text-white py-4 px-6 absolute top-0 left-0 w-full z-40">
+          <Link to="/" className="block py-2">Home</Link>
+          <Link to="/friends" className="block py-2">Friends</Link>
+          <Link to="/notifications" className="block py-2">Notifications</Link>
+          <Link to="/profile" className="block py-2">Profile</Link>
+          <Link to="/settings" className="block py-2">Settings</Link>
+
+          {/* Dark Mode Toggle */}
+          <button onClick={toggleDarkMode} className="flex items-center gap-2 py-2">
+            {isDarkMode ? <FiSun /> : <FiMoon />}
+            The Darkness
+          </button>
+        </div>
+      )}
     </nav>
   );
-};
+}
 
-export default NavBar
+export default Navbar;
