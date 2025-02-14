@@ -1,41 +1,41 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion"; // For smooth animations
-import { FaUserShield, FaComments, FaTrophy } from "react-icons/fa"; // Icons for features
+import { motion } from "framer-motion"; 
+import { FaUserShield, FaComments, FaTrophy } from "react-icons/fa"; 
 import Wallpaper from "./Wallpaper";
+
 function Home() {
   return (
-    <div className="relative min-h-screen bg-gray-400 text-white flex flex-col items-center justify-center overflow-hidden">
+    <div className="relative min-h-screen flex flex-col items-center justify-center text-white overflow-hidden">
       
-      {/* Animated Background */}
-      {/* <div className="absolute inset-0 z-0">
-        <div className="absolute w-full h-full bg-gradient-to-b from-black via-gray-900 to-gray-800 opacity-70"></div>
-        <div className="absolute w-full h-full animate-pulse bg-[radial-gradient(circle_at_top_right,_#00ffff33,_transparent)]">
-          {/* <Wallpaper /> */}
-        {/* </div>
-      </div> */} 
-        <Wallpaper />
+      {/* Gradient Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-black via-red-700 to-black dark:from-black dark:via-gray-800 dark:to-gray-900"></div>
+
+      {/* Wallpaper Component */}
+      <Wallpaper />
+
       {/* Hero Section */}
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
         className="text-center z-10"
       >
-        <h1 className="text-6xl font-extrabold text-red-700 dark:text-orange-500  neon-text drop-shadow-lg">
-          Welcome to Car X Street Underground
+        <h1 className="text-6xl font-extrabold text-white dark:text-gray-300 neon-text">
+          Welcome to CarX Street Underground
         </h1>
-        <p className="text-lg text-gray-300 mt-4 max-w-xl mx-auto">
-          Experience the next-gen platform where technology meets community. Customize, compete, and connect like never before.
+        <p className="text-lg text-gray-300 dark:text-gray-400 mt-4 max-w-xl mx-auto">
+          The ultimate underground racing community. Tune, race, and dominate.
         </p>
+        
         <div className="mt-6 flex gap-4 justify-center">
           <Link to="/login">
-            <button className="px-6 py-2 text-lg font-semibold rounded-lg bg-red-700 hover:bg-gray-700 transition-all duration-300 shadow-lg glow-btn">
+            <button className="px-6 py-3 text-lg font-semibold rounded-lg bg-red-600 hover:bg-red-700 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-lg glow-btn">
               Get Started
             </button>
           </Link>
           <Link to="/about">
-            <button className="px-6 py-2 text-lg font-semibold rounded-lg border border-black text-black divide-amber-600 hover:text-white transition-all duration-300 shadow-lg">
+            <button className="px-6 py-3 text-lg font-semibold rounded-lg border border-white text-white hover:bg-white hover:text-black dark:border-gray-400 dark:text-gray-300 dark:hover:bg-gray-400 dark:hover:text-black transition-all duration-300 shadow-lg">
               Learn More
             </button>
           </Link>
@@ -44,56 +44,63 @@ function Home() {
 
       {/* Features Section */}
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}
         className="mt-16 grid gap-8 grid-cols-1 md:grid-cols-3 max-w-5xl z-10"
       >
-        <div className="feature-card">
-          <FaUserShield className="text-4xl text-red-700 mb-2" />
-          <h3 className="text-xl font-semibold text-red-700">🔥 Custom Profiles</h3>
-          <p className="text-red-700 mt-2">Personalize your space with themes, avatars, and unique status updates.</p>
-        </div>
-
-        <div className="feature-card">
-          <FaComments className="text-4xl text-red-700 mb-2" />
-          <h3 className="text-xl font-semibold text-cyan-300">🌐 Community Chats</h3>
-          <p className="text-gray-400 mt-2">Join topic-based chatrooms and connect in real time.</p>
-        </div>
-
-        <div className="feature-card">
-          <FaTrophy className="text-4xl text-cyan-300 mb-2" />
-          <h3 className="text-xl font-semibold text-cyan-300">🚀 Leaderboards</h3>
-          <p className="text-gray-400 mt-2">Compete for badges and climb to the top.</p>
-        </div>
+        {/* Feature Cards */}
+        {[
+          { icon: <FaUserShield className="text-4xl text-red-400 dark:text-gray-400" />, title: "Custom Profiles", desc: "Personalize your space with themes and avatars." },
+          { icon: <FaComments className="text-4xl text-pink-400 dark:text-gray-400" />, title: "Community Chats", desc: "Join topic-based chatrooms and connect in real-time." },
+          { icon: <FaTrophy className="text-4xl text-yellow-400 dark:text-gray-400" />, title: "Leaderboards", desc: "Compete for top ranks and exclusive rewards." }
+        ].map((feature, index) => (
+          <div key={index} className="feature-card dark:feature-card-dark">
+            {feature.icon}
+            <h3 className="text-xl font-semibold mt-2">{feature.title}</h3>
+            <p className="text-gray-400 mt-2">{feature.desc}</p>
+          </div>
+        ))}
       </motion.div>
 
       {/* Footer */}
-      <footer className="absolute bottom-5 text-gray-500 text-sm z-10">
+      <footer className="absolute bottom-5 text-gray-500 text-sm z-10 dark:text-gray-400">
         &copy; {new Date().getFullYear()} CyberNet | All Rights Reserved
       </footer>
 
       {/* Extra Styles */}
       <style>
         {`
-          .neon-text {
-            text-shadow: 0 0 10px rgba(0, 255, 255, 0.8), 0 0 20px rgba(0, 255, 255, 0.6);
-          }
-          .glow-btn {
-            box-shadow: 0 0 8px rgba(0, 255, 255, 0.8);
-          }
-          .feature-card {
-            background: rgba(40, 40, 40, 0.8);
+         .neon-text {
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(255, 0, 0, 0.6);
+         }
+         .glow-btn {
+            box-shadow: 0 0 8px rgba(255, 0, 0, 0.8);
+         }
+         .feature-card {
+            background: rgba(255, 200, 200, 0.8);
             padding: 20px;
             border-radius: 10px;
             backdrop-filter: blur(10px);
             text-align: center;
-            box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
             transition: transform 0.3s ease-in-out;
-          }
-          .feature-card:hover {
+         }
+         .feature-card:hover {
             transform: scale(1.05);
-          }
+         }
+
+         /* Dark Mode */
+         .dark .neon-text {
+            text-shadow: 0 0 10px rgba(150, 150, 150, 0.8), 0 0 20px rgba(150, 150, 150, 0.6);
+         }
+         .dark .glow-btn {
+            box-shadow: 0 0 8px rgba(150, 150, 150, 0.8);
+         }
+         .dark .feature-card {
+            background: rgba(40, 40, 40, 0.8);
+            box-shadow: 0 0 10px rgba(150, 150, 150, 0.3);
+         }
         `}
       </style>
     </div>
