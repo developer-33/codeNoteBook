@@ -59,7 +59,7 @@ function App() {
   const [isDarkMode, setIsDarkMode] = useDarkMode();
 
   return (  
-    <div className="App bg-white dark:bg-gray-700 text-red-700 dark:text-yellow-400 min-h-screen">
+    <div className="App bg-gray-400  dark:bg-black dark:text-orange-600  min-h-screen">
           <NavBar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
       <Sidebar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
       <Mainsection isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />

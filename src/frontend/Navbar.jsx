@@ -5,7 +5,7 @@ const NavBar = ({ isDarkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-red-700 dark:bg-black shadow-lg">
+    <nav className="bg-gray-400 dark:bg-black shadow-lg">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
