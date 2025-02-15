@@ -7,6 +7,7 @@ import Cars from './Cars';
 import FriendsPage from './Profile/Friends';
 import ForgotPassword from './auth/ForgotPassword';
 import MessagePage from './messages/MessagePage';
+import SignUpForm from './auth/Register';
 
   // import Login from "./auth/Login";
   // import ProtectedRoute from './auth/ProtectedRoutes';
@@ -27,6 +28,7 @@ const Mainsection = () => {
           <Route path="/cars" element={<Cars />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/messages" element={<MessagePage />} />
+          <Route path="/register" element={<SignUpForm />} />
       
           <Route path="/friends" element={<FriendsPage  />} />
         {/* </Route> */}

@@ -25,11 +25,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-white text-red-700   dark:text-white  dark:bg-orange-600 fixed top-0 w-full shadow-lg z-50">
+    <nav className="bg-red-700 text-white   dark:text-red-700  dark:bg-gray-600 fixed top-0 w-full shadow-lg z-50">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         
         {/* Left Section - Logo */}
-        <Link to="/" className="text-2xl font-bold  text-red-700   dark:text-white ">
+        <Link to="/" className="text-2xl font-bold  text-white   dark:text-orange-600 ">
           Car X Street Underground
         </Link>
 
@@ -89,7 +89,7 @@ function Navbar() {
           <Link to="/notebooks" className="block py-2">Settings</Link>
 
           {/* Dark Mode Toggle */}
-          <button onClick={toggleDarkMode} className="flex items-center gap-2 py-2">
+          <button onClick={toggleDarkMode} className="flex items-right gap-2 py-2">
             {isDarkMode ? <FiSun /> : <FiMoon />}
         
           </button>

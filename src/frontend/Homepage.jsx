@@ -11,9 +11,7 @@ function Home() {
     <div className="relative min-h-screen flex flex-col items-center justify-center text-gray-800 overflow-hidden">
       <HomePageCards />
       {/* Gradient Background */}
-      <div className="absolute inset-4 bg-gradient-to-br
-       from-gray-200 via-red-300 to-gray-300
-        dark:from-gray-400 dark:via-orange-500 dark:to-gray-400"></div>
+      <div className="absolute inset-4 "></div>
 
       {/* Wallpaper Component */}
       <Wallpaper />
@@ -36,14 +34,14 @@ function Home() {
          
         <div className="mt-6 flex gap-4 justify-center">
           <Link to="/login">
-            {/* <button className="px-6 py-3 text-lg font-semibold rounded-lg bg-red-600 hover:bg-red-700 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-lg glow-btn">
+            <button className="px-6 py-3 text-lg font-semibold rounded-lg bg-red-600 hover:bg-red-700 dark:bg-gray-700 dark:hover:bg-gray-600 transition-all duration-300 shadow-lg glow-btn">
               Get Started
-            </button> */}
+            </button>
           </Link>
           <Link to="/about">
-            {/* <button className="px-6 py-3 text-lg font-semibold rounded-lg border border-white text-white hover:bg-white hover:text-black dark:border-gray-400 dark:text-gray-300 dark:hover:bg-gray-400 dark:hover:text-black transition-all duration-300 shadow-lg">
+            <button className="px-6 py-3 text-lg font-semibold rounded-lg border border-white text-white hover:bg-white hover:text-black dark:border-gray-400 dark:text-gray-300 dark:hover:bg-gray-400 dark:hover:text-black transition-all duration-300 shadow-lg">
               Sign Up
-            </button> */}
+            </button>
           </Link>
         </div>
       </motion.div>

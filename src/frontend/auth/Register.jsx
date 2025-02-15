@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { registerUser } from "../api/index";
+// import { registerUser } from "../api/index";
 
 
 const SignUpForm = () => {
@@ -19,7 +19,7 @@ const SignUpForm = () => {
     }
 
     return (
-        <>        
+        <div>        
             <h2 className="sign-up">Sign Up</h2>
             { error && <p>{error}</p> }
             <form onSubmit={handleSubmit}>
@@ -33,7 +33,7 @@ const SignUpForm = () => {
                 <br />
                 <button type="submit">Submit</button>
             </form>        
-        </>
+        </div>
     )
     
  
