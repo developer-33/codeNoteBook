@@ -36,7 +36,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 20 }}
-        className="fixed top-0 left-0 h-full w-64 bg-white dark:bg-orange-600 dark:text-gray-600 text-red-700 p-6 shadow-lg z-50"
+        className="fixed top-0 left-0 h-full w-64 bg-white dark:bg-gray-600 dark:text-orange-600 text-red-700 p-6 shadow-lg z-50"
       >
         <h2 className="text-xl font-bold mb-4">Sidebar Menu</h2>
         {/* Dark Mode Toggle Button */}

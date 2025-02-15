@@ -25,7 +25,7 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-red-700 text-white   dark:text-red-700  dark:bg-gray-600 fixed top-0 w-full shadow-lg z-50">
+    <nav className="bg-red-700 text-white   dark:text-orange-600  dark:bg-gray-600 fixed top-0 w-full shadow-lg z-50">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         
         {/* Left Section - Logo */}

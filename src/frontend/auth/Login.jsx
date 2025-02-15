@@ -77,8 +77,9 @@ function LogIn() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 1 }}
-      className="bg-white bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg p-6 w-full max-w-md text-center z-10 
-                 dark:bg-gray-800 dark:bg-opacity-50"
+      className="bg-white dark:bg-gray-600 dark:text-orange-600 text-red-700
+      bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg p-6 w-full max-w-md text-center z-10 
+                  dark:bg-opacity-50"
     >
       <h2 className="text-3xl font-bold text-white dark:text-gray-300 neon-text">Sign In</h2>
       <p className="text-gray-300 dark:text-gray-400 mt-2">Join the underground racing scene!</p>
