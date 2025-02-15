@@ -45,6 +45,8 @@
     "react-slick": "^0.29.0",
     "react-syntax-highlighter": "^15.6.1",
     "slick-carousel": "^1.8.1",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
     "stripe": "^14.4.0",
     "vite-express": "*",
     "volleyball": "^1.5.1"

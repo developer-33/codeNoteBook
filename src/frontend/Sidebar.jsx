@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link } from "react-router-dom"
+import LogIn from "./auth/Login";
 import { FiSun, FiMoon } from "react-icons/fi";
 import { Home, Settings, Bell, User, MessageCircle, UserPlus } from "lucide-react";
 
@@ -27,7 +28,8 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
           onClick={() => setIsOpen(false)}
           className="fixed inset-0 bg-black z-40"
         />
-      )}
+      )} 
+      
 
       {/* Sidebar */}
       <motion.div
@@ -104,7 +106,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
               Notifications
             </Link>
           </li>
-
+      
           {/* Settings Link */}
           <li>
             <Link
@@ -117,7 +119,9 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
             </Link>
           </li>
         </ul>
+          <LogIn />
       </motion.div>
+    
     </div>
   );
 };

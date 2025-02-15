@@ -46,7 +46,7 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-6">
           <Link to="/" className="text-xl hover:text-cyan-400"><FaHome /></Link>
           <Link to="/friends" className="text-xl hover:text-gray-400"><FaUserFriends /></Link>
-          <Link to="/notifications" className="text-xl hover:text-cyan-400"><FaBell /></Link>
+          {/* <Link to="/notifications" className="text-xl hover:text-cyan-400"><FaBell /></Link> */}
           <Link to="/notebook" className="text-xl hover:text-cyan-400"><FaBell /></Link>
 
           {/* Dark Mode Toggle */}
@@ -83,9 +83,9 @@ function Navbar() {
         <div className="md:hidden bg-gray-900 text-white py-4 px-6 absolute top-0 left-0 w-full z-40">
           <Link to="/" className="block py-2">Home</Link>
           <Link to="/friends" className="block py-2">Friends</Link>
-          <Link to="/notifications" className="block py-2">Notifications</Link>
+                                                                                                           */}
           <Link to="/profile" className="block py-2">Profile</Link>
-          <Link to="/settings" className="block py-2">Settings</Link>
+          {/* <Link to="/settings" className="block py-2">Settings</Link> */}
           <Link to="/notebooks" className="block py-2">Settings</Link>
 
           {/* Dark Mode Toggle */}
