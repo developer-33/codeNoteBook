@@ -116,11 +116,11 @@ function LogIn() {
 
       {/* Extra Links */}
       <div className="mt-4">
-        <a href="/forgot-password" className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-gray-200">
+        <a href="/forgot-password" className="text-red-700 hover:text-gray-600 dark:text-gray-400 dark:hover:text-orange-600">
           Forgot Password?
         </a>
         <br />
-        <a href="/forgot-password" className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-gray-200">
+        <a href="/forgot-password" className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-orange-600">
           Sign Up
         </a>
       </div>
