@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Homepage from './Homepage';
-import CodeNotebookApp from './CodeNotebookApp';
-import ProfilePage from './Profile/ProfilePage';
-import Cars from './Cars';
-import FriendsPage from './Profile/Friends';
-import ForgotPassword from './auth/ForgotPassword';
-import MessagePage from './messages/MessagePage';
-import SignUpForm from './auth/Register';
+import CodeNotebookApp from '../components/CodeNotebookApp';
+import ProfilePage from '../Profile/ProfilePage';
+import Cars from '../Cars';
+import FriendsPage from '../Profile/Friends';
+import ForgotPassword from '../auth/ForgotPassword';
+import MessagePage from '../messages/MessagePage';
+import SignUpForm from '../auth/Register';
 
   // import Login from "./auth/Login";
   // import ProtectedRoute from './auth/ProtectedRoutes';

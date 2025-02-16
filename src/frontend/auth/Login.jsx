@@ -81,28 +81,28 @@ function LogIn() {
       bg-opacity-10 backdrop-blur-md rounded-lg shadow-lg p-6 w-full max-w-md text-center z-10 
                   dark:bg-opacity-50"
     >
-      <h2 className="text-3xl font-bold text-white dark:text-gray-300 neon-text">Sign In</h2>
-      <p className="text-gray-300 dark:text-gray-400 mt-2">Join the underground racing scene!</p>
+      <h2 className="text-3xl font-bold text-red-700 dark:text-orange-600 neon-text">Sign In</h2>
+      <p className="text-red-300 dark:text-gray-600 mt-2">Join the underground racing scene!</p>
 
       <form className="mt-4 space-y-4">
         {/* Username Field */}
         <div className="relative">
-          <FaUser className="absolute left-3 top-3 text-gray-400" />
+          <FaUser className="absolute left-3 top-3 text-red-700" />
           <input
             type="text"
             placeholder="Username"
-            className="w-full pl-10 p-3 rounded-lg bg-gray-900 bg-opacity-40 text-white border border-gray-500 
+            className="w-full pl-10 p-3 rounded-lg bg-gray-900 bg-opacity-40 text-red-700 border border-gray-500 
                        focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:border-gray-400"
           />
         </div>
 
         {/* Password Field */}
         <div className="relative">
-          <FaLock className="absolute left-3 top-3 text-gray-400" />
+          <FaLock className="absolute left-3 top-3 text-red-700" />
           <input
             type="password"
             placeholder="Password"
-            className="w-full pl-10 p-3 rounded-lg bg-gray-900 bg-opacity-40 text-white border border-gray-500 
+            className="w-full pl-10 p-3 rounded-lg bg-gray-900 bg-opacity-40 text-red-700 border border-gray-500 
                        focus:ring-2 focus:ring-red-500 dark:bg-gray-700 dark:border-gray-400"
           />
         </div>

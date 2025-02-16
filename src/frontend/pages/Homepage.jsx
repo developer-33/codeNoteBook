@@ -2,9 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; 
  
-import Wallpaper from "./Wallpaper";
-import HomePageCards from "./HomePageCards";
-import LogIn from "./auth/Login";
+import Wallpaper from "../components/Wallpaper";
+import HomePageCards from "../components/HomePageCards";
+import LogIn from "../auth/Login";
 
 function Home() {
   return (

@@ -1,36 +1,34 @@
 const bcrypt = require("bcrypt");
-const db = require("./client"); // Keep one import for db
+const db = require("./client");
 const SALT_COUNT = 10;
-const { JWT_SECRET } = process.env;
 
-const createUser = async ({ username,bio,custom_settings, avatar_url,theme, email, password, isAdmin }) => {
-  const hashedPassword = await bcrypt.hash(password, SALT_COUNT);
-   
-  if(!isAdmin){
-      isAdmin = false
-  }
 
-  if(!username){
-    username=email
-  }
+const createUser = async ({ username, bio, custom_settings, avatar_url, theme, email, password, isAdmin }) => {
   try {
+    if (!password) {
+      throw new Error("Password is required");
+    }
+
+    const hashedPassword = await bcrypt.hash(password, SALT_COUNT);
+    
+    if (!isAdmin) isAdmin = false;
+    if (!username) username = email;
+
     const {
       rows: [user],
     } = await db.query(
       `
-
-
-
-
-      INSERT INTO users(isAdmin,bio,avatar_url,username,theme,email,password,created_At,custom_settings )
-      VALUES($1, $2, $3, $4,$5,$6,$7,$8)
+      INSERT INTO users(is_admin, bio, avatar_url, username, theme, email, password_hash, created_at, custom_settings)
+      VALUES($1, $2, $3, $4, $5, $6, $7, NOW(), $8)
       ON CONFLICT (email) DO NOTHING
-      RETURNING * `,
-      [isAdmin,bio,avatar_url,username,email,password,created_At,custom_settings] // Default username to email if missing
+      RETURNING id, username, email, avatar_url, bio, theme, created_at, is_admin;
+      `,
+      [isAdmin, bio, avatar_url, username, theme, email, hashedPassword, custom_settings]
     );
 
     return user;
   } catch (err) {
+    console.error("Error creating user:", err);
     throw err;
   }
 };
@@ -42,10 +40,10 @@ const getUser = async ({ email, password }) => {
     const user = await getUserByEmail(email);
     if (!user) return null;
 
-    const passwordsMatch = await bcrypt.compare(password, user.password_hash);
+    const passwordsMatch = await bcrypt.compare(password, user.password);
     if (!passwordsMatch) return null;
 
-    delete user.password_hash; // Remove password before returning
+    delete user.password; // Remove password before returning
     return user;
   } catch (err) {
     throw err;
@@ -57,7 +55,7 @@ const getUserByEmail = async (email) => {
     const {
       rows: [user],
     } = await db.query(
-      `SELECT id, username, email, avatar_url, bio, theme, created_at, isAdmin, password_hash 
+      `SELECT id, username, email, avatar_url, bio, theme, created_at, is_admin, password_hash as password
        FROM users WHERE email=$1;`,
       [email]
     );
@@ -73,7 +71,7 @@ const getUserById = async (id) => {
     const {
       rows: [user],
     } = await db.query(
-      `SELECT id, username, email, avatar_url, bio, theme, created_at, isAdmin 
+      `SELECT id, username, email, avatar_url, bio, theme, created_at, is_admin 
        FROM users WHERE id=$1;`,
       [id]
     );
@@ -87,7 +85,7 @@ const getUserById = async (id) => {
 async function getAllUsers() {
   try {
     const { rows } = await db.query(
-      `SELECT id, username, email, avatar_url, bio, theme, created_at, isAdmin FROM users;`
+      `SELECT id, username, email, avatar_url, bio, theme, created_at, is_admin FROM users;`
     );
 
     return rows;

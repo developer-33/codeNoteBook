@@ -48,11 +48,11 @@
 
 // export default App;
 
-import useDarkMode from "./useDarkMode";
-import NavBar from "./Navbar";
-import Sidebar from "./Sidebar";
-import Mainsection from "./Mainsection";
-import Wallpaper from "./Wallpaper";
+import useDarkMode from "./components/useDarkMode";
+import NavBar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import Mainsection from "./pages/Mainsection";
+import Wallpaper from "./components/Wallpaper";
 import "./index.css";
 
 function App() {

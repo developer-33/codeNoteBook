@@ -33,7 +33,7 @@ require('dotenv').config()
 const express = require("express");
 const http = require("http");
 const cors = require("cors");
-const router = require('vite-express');
+// const router = require('vite-express');
 const app = express();
 const server = http.createServer(app);
 const { Server } = require("socket.io");
@@ -52,8 +52,8 @@ app.use(express.static('public'));
 const db = require('./db/client');
 db.connect();
 
-const apiRouter = require('./api');
-app.use('/api', apiRouter);
+// const apiRouter = require('./api');
+// app.use('/api', apiRouter);
 
 const io = new Server(server, {
   cors: corsOptions,
@@ -71,4 +71,4 @@ io.on("connection", (socket) => {
   });
 });
 
-router.listen(5000, () => console.log("Server running on port 5000"));
+server.listen(5000, () => console.log("Server running on port 5000"));
