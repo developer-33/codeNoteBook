@@ -67,11 +67,36 @@
 
 
 
-import React from "react";
+import { useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaUser, FaLock } from "react-icons/fa";
+import { FiMoon, FiSun } from "react-icons/fi";
 
 function LogIn() {
+
+  const [isDarkMode, setIsDarkMode] = useState(
+    localStorage.getItem("theme") === "dark"
+  );
+
+  // Toggle Dark Mode
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {                                                                             
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+
+
+
+
   return (
     <motion.div
       initial={{ opacity: 0, y: -20 }}
@@ -83,7 +108,9 @@ function LogIn() {
     >
       <h2 className="text-3xl font-bold text-red-700 dark:text-orange-600 neon-text">Sign In</h2>
       <p className="text-red-300 dark:text-gray-600 mt-2">Join the underground racing scene!</p>
-
+   <button onClick={toggleDarkMode} className=" flex items-center gap-2">
+            {isDarkMode ? <FiSun /> : <FiMoon />}
+          </button>
       <form className="mt-4 space-y-4">
         {/* Username Field */}
         <div className="relative">

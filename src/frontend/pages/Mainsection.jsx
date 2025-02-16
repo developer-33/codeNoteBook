@@ -9,20 +9,27 @@ import ForgotPassword from '../auth/ForgotPassword';
 import MessagePage from '../messages/MessagePage';
 import SignUpForm from '../auth/Register';
 
-  // import Login from "./auth/Login";
-  // import ProtectedRoute from './auth/ProtectedRoutes';
+  import Login from "../auth/Login.jsx";
+  import ProtectedRoute from '../auth/ProtectedRoutes';
 
 const Mainsection = () => {
-  // const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
+  const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   return (
     <div>
       <Routes>
         <Route path="/" element={<Homepage />} />
-        {/* <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} /> */}
-
+         <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} /> 
+         <Route path="/notebook" element={<CodeNotebookApp />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/cars" element={<Cars />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/chat" element={<MessagePage />} />
+          <Route path="/register" element={<SignUpForm />} />
+      
+          <Route path="/friends" element={<FriendsPage  />} />
         {/* Protect these routes */}
-        {/* <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />} > */}
+        <Route element={<ProtectedRoute isLoggedIn={isLoggedIn} />} >
           <Route path="/notebook" element={<CodeNotebookApp />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/cars" element={<Cars />} />
@@ -31,7 +38,7 @@ const Mainsection = () => {
           <Route path="/register" element={<SignUpForm />} />
       
           <Route path="/friends" element={<FriendsPage  />} />
-        {/* </Route> */}
+        </Route>
       </Routes>
     </div>
   );

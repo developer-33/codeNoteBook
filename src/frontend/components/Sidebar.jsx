@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom"
-import LogIn from "../auth/Login";
+
 import { FiSun, FiMoon } from "react-icons/fi";
 import { Home, Settings, Bell, User, MessageCircle, UserPlus } from "lucide-react";
 
@@ -40,7 +40,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
       >
         <h2 className="text-xl font-bold mb-4">Sidebar Menu</h2>
         {/* Dark Mode Toggle Button */}
-        <button onClick={toggleDarkMode} className="text-black dark:text-white text-xl mb-4">
+        <button onClick={toggleDarkMode} className="text-black dark:text-yellow-500 text-xl mb-4">
           {isDarkMode ? <FiSun /> : <FiMoon />}
         </button>
    
@@ -119,9 +119,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
             </Link>
           </li>
         </ul>
-        <div className="">
-           <LogIn />
-        </div>
+        
          
       </motion.div>
     

@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; 
  
 import Wallpaper from "../components/Wallpaper";
-import HomePageCards from "../components/HomePageCards";
+
 import LogIn from "../auth/Login";
 
 function Home() {
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center text-gray-800 overflow-hidden">
-      <HomePageCards />
+     
       {/* Gradient Background */}
       <div className="absolute inset-4 "></div>
 
       {/* Wallpaper Component */}
       <Wallpaper />
-
+      <LogIn />
       {/* Hero Section */}
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
@@ -44,7 +44,7 @@ function Home() {
             </button>
           </Link>
         </div>
-      </motion.div>
+      </motion.div> */}
 
       {/* Features Section */}
   
