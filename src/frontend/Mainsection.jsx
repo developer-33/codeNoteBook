@@ -27,7 +27,7 @@ const Mainsection = () => {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/cars" element={<Cars />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-          <Route path="/messages" element={<MessagePage />} />
+          <Route path="/chat" element={<MessagePage />} />
           <Route path="/register" element={<SignUpForm />} />
       
           <Route path="/friends" element={<FriendsPage  />} />

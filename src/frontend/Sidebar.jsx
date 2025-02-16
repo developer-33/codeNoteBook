@@ -74,7 +74,7 @@ const Sidebar = ({ isDarkMode, toggleDarkMode }) => {
           {/* Messages Link */}
           <li>
             <Link
-              to="/messages"
+              to="/chat"
               className="block px-4 py-2 rounded-md hover:bg-orange-500"
               onClick={() => setIsOpen(false)}
             >

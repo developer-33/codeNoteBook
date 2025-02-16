@@ -1,5 +1,5 @@
 import React from "react";
-import backgroundImage from "../assets/sunsetcity.jpg"; // Ensure the correct file path and extension
+import backgroundImage from "../assets/Car-X-Street.jpg"; // Ensure the correct file path and extension
 
 function image() {
   return (

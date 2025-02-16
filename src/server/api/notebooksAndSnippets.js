@@ -1,11 +1,8 @@
 
 const express = require('express')
-const router = require('vite-express'
+const router = require('vite-express')
 
 
-
-    const {requireUser} = require("./")
-)
 
 
 // Create a notebook
