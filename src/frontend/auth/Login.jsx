@@ -71,7 +71,7 @@ import { useState,useEffect } from "react";
 import { motion } from "framer-motion";
 import { FaUser, FaLock } from "react-icons/fa";
 import { FiMoon, FiSun } from "react-icons/fi";
-
+import ImageComponent from "../components/Iamge2";
 function LogIn() {
 
   const [isDarkMode, setIsDarkMode] = useState(
@@ -150,6 +150,7 @@ function LogIn() {
         <a href="/forgot-password" className="text-gray-300 hover:text-white dark:text-gray-400 dark:hover:text-orange-600">
           Sign Up
         </a>
+        <ImageComponent />
       </div>
 
       {/* Styles */}

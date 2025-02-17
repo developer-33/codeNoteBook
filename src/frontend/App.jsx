@@ -49,10 +49,10 @@
 // export default App;
 
 import useDarkMode from "./components/useDarkMode";
-// import NavBar from "./components/Navbar";
-import Sidebar from "./components/Sidebar";
+import NavBar from "./components/Navbar";
+// import Sidebar from "./components/Sidebar";
 import Mainsection from "./pages/Mainsection";
-import Wallpaper from "./components/Wallpaper";
+
 import "./index.css";
 
 function App() {
@@ -60,8 +60,8 @@ function App() {
 
   return (  
     <div className="App bg-gray-400  dark:bg-black dark:text-orange-600  min-h-screen">
-          {/* <NavBar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} /> */}
-      <Sidebar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
+         <NavBar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} /> 
+      {/* <Sidebar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} /> */}
       <Mainsection isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
     <div>
      

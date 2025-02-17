@@ -16,7 +16,7 @@ const Mainsection = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(!!localStorage.getItem("token"));
 
   return (
-    <div>
+    <div className=''>
       <Routes>
         <Route path="/" element={<Homepage />} />
          <Route path="/login" element={<Login setIsLoggedIn={setIsLoggedIn} />} /> 

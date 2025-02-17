@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaHome, FaUserFriends, FaBell, FaUserCircle, FaBars, FaTimes } from "react-icons/fa";
 import { FiMoon, FiSun } from "react-icons/fi";
-
+import Sidebar from "./Sidebar";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(
@@ -25,9 +25,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-red-700 text-white   dark:text-orange-600  dark:bg-gray-600 fixed top-0 w-full shadow-lg z-50">
+    <nav className="bg-red-700 text-white dark:text-orange-600 dark:bg-gray-600 relative top-0 w-full h-16 shadow-lg z-50 flex items-center px-4">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
         
+      <Sidebar isDarkMode={isDarkMode} toggleDarkMode={() => setIsDarkMode(!isDarkMode)} />
+
         {/* Left Section - Logo */}
         <Link to="/" className="text-2xl font-bold  text-white   dark:text-orange-600 ">
           Car X Street Underground
